@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GuessGame {
+public class Myrandom {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int javaInput = (int) (Math.random() * 10);
@@ -13,16 +13,9 @@ public class GuessGame {
                 tries = tries + 1;
                 System.out.println("Подумай еще! Число должно быть больше. Попытка № " + tries);
             }
-            if ( javaInput < userInput) {
-                tries = tries + 1;
-                System.out.println("Попробуй еще раз, число должно быть меньше. Попытка № " + tries);
-            }
-        } while ( javaInput != userInput );
-        tries = tries + 1;
-        System.out.println("С попытки № " + tries + " ты угадал!");
         }
     }
-
+}
 
 
 

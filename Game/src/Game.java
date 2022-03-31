@@ -5,16 +5,18 @@ public class Game {
         Scanner s = new Scanner(System.in);
         int x = (int) (Math.random() * 10);
         int y;
+        int z = 0;
         do {
             System.out.println("Введите число от 0 до 10");
             y = s.nextInt();
-            if (x > y) {
-                System.out.println("Попробуй еще!");
+            if (x > y) {z = z + 1;
+                System.out.println("Подумай еще! Число должно быть больше. Попытка № " + z);
             }
-            if (x < y) {
-                System.out.println("Не угадал. Попробуй еще!");
+            if (x < y) {z = z + 1;
+                System.out.println("Попробуй еще раз, число должно быть меньше. Попытка № " + z);
             }
         } while (x != y) ;
-            System.out.println("Угадал!");
+        z = z + 1;
+            System.out.println("С попытки № " + z + " ты угадал ");
     }
 }

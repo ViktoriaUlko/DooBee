@@ -3,20 +3,25 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int x = (int) (Math.random() * 10);
-        int y;
-        int z = 0;
+        int numberRandom = (int) (Math.random() * 10);
+        int numberUser;
+        int numberTry = 1;
+        System.out.println("Я загалала число от 0 до 10. У тебя есть 5 попыток отгадать его.");
         do {
-            System.out.println("Введите число от 0 до 10");
-            y = s.nextInt();
-            if (x > y) {z = z + 1;
-                System.out.println("Подумай еще! Число должно быть больше. Попытка № " + z);
+            numberTry = numberTry + 1;
+            numberUser = s.nextInt();
+            if (numberRandom > numberUser) {
+                System.out.println("Подумай еще! Число должно быть больше. Попытка № " + numberTry);
             }
-            if (x < y) {z = z + 1;
-                System.out.println("Попробуй еще раз, число должно быть меньше. Попытка № " + z);
+            if (numberRandom < numberUser) {
+                System.out.println("Подумай еще! Число должно быть меньше. Попытка № " + numberTry);
             }
-        } while (x != y) ;
-        z = z + 1;
-            System.out.println("С попытки № " + z + " ты угадал ");
+        } while (numberRandom != numberUser && numberTry != 6);
+        if (numberTry == 6) {
+            System.out.println("Попытки закончились. Ты проиграл!");
+        }
+        if (numberRandom == numberUser) {
+            System.out.println("С попытки № " + numberTry + " ты угадал!");
+        }
     }
 }

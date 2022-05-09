@@ -11,7 +11,7 @@ public class Game {
         boolean isWin = true;
 //        чтобы знать что загадал комп
 //        System.out.println(numberPC);
-        System.out.println("Введите число от 0 до 10");
+        System.out.println("У тебя есть 5 попыток, чтобы угадать число  от 0 до 10");
         do {
             numberUser = s.nextInt();
             tries++;
